@@ -19,5 +19,10 @@ pipeline {
                 sh 'mvn verify -DskiUnitTest'
             }
         }
+        stage ('maven build') {
+            steps{
+                sh 'mvn clean install'
+            }
+        }
     }
 }
