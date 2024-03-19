@@ -81,7 +81,7 @@ pipeline {
                         usernameColonPassword(
                             credentialsId: 'dockerhub-cred', 
                             variable: 'dockerhub-credentials')]) {
-                                sh 'docker login -u ruttalaswathi -p ${dockerhub-credentials}'
+                                sh "docker login -u ruttalaswathi -p ${dockerhub-credentials}"
                                 sh 'docker image push ruttalaswathi/$JOB_NAME:V1.$BUILD_ID'
                                 sh 'docker image push ruttalaswathi/$JOB_NAME:latest'
                     }
